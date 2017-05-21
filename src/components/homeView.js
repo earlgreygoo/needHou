@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './header';
+import Shelter from '../shelters'
 
 
 const HomeView = React.createClass({
@@ -7,7 +8,7 @@ const HomeView = React.createClass({
 				return (
 					<div className= "home">
 						<Header />
-						<ResourceList />
+						<Categories />
 					</div>  
 
 					);
@@ -28,7 +29,7 @@ const Categories = React.createClass({
             "Support and Counselling": <i className="col-xs-1 fa fa-users" aria-hidden="true"></i>
         };
         var categoriesLink = Object.entries(categories).map(function([key, value]) {
-            return ( <a className="col-xs-12 btn btn-default btn-lg text-left" href={'/'}>
+            return ( <a className="col-xs-12 btn btn-default btn-lg text-left" href={'#' + key}>
                     {value} {key}
                     </a>
                     );
